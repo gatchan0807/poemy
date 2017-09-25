@@ -11,12 +11,13 @@
 <body>
 <header>
   <nav>
+    <%= link_to 'TOP', common_landing_path %>
     <% if user_signed_in? %>
         <strong><%= link_to current_user.username, common_landing_path %></strong>
         <%= link_to 'プロフィール変更', edit_user_registration_path %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
     <% else %>
-        <%= link_to 'サインアップ', new_user_registration_path %>
+        <%= link_to 'アカウント作成', new_user_registration_path %>
         <%= link_to 'ログイン', new_user_session_path %>
     <% end %>
   </nav>
