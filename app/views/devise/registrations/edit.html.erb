@@ -1,16 +1,21 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>プロフィール編集</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email, "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :username, 'ユーザ名' %><br />
+    <%= f.text_field :username, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password, "パスワード" %> <i>(メールアドレスのみの変更であれば空欄可)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.label :email, 'メールアドレス' %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, 'パスワード' %> <i>(メールアドレスのみの変更であれば空欄可)</i><br />
+    <%= f.password_field :password, autocomplete: 'off' %>
     <% if @minimum_password_length %>
       <br />
       (<%= @minimum_password_length %>文字以上で入力してください)
@@ -18,25 +23,25 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "パスワード(確認)" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :password_confirmation, 'パスワード(確認)' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: 'off' %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password, "現在のパスワード" %> (変更を確定するために、現在のパスワードを入力してください)<br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.label :current_password, '現在のパスワード' %> (変更を確定するために、現在のパスワードを入力してください)<br />
+    <%= f.password_field :current_password, autocomplete: 'off' %>
   </div>
 
   <div class="actions">
-    <%= f.submit "更新" %>
+    <%= f.submit '更新' %>
   </div>
 <% end %>
 
-<%= link_to "戻る", :back %>
+<%= link_to '戻る', :back %>
 
 <h3>Poemy から退会する</h3>
 
 <p>
   下記のボタンを押すと、もうアカウントの復帰は出来ませんがよろしいですか？
-  <%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当によろしいですか？" }, method: :delete %>
+  <%= button_to 'アカウント削除', registration_path(resource_name), data: {confirm: '本当によろしいですか？'}, method: :delete %>
 </p>

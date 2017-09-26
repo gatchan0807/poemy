@@ -4,30 +4,35 @@
     <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :username, "ユーザ名" %><br/>
+      <%= f.label :username, 'ユーザ名' %><br/>
       <%= f.text_field :username %>
     </div>
 
     <div class="field">
-      <%= f.label :email, "メールアドレス" %><br/>
+      <%= f.label :userid, 'ユーザID' %><br/>
+      <%= f.text_field :userid %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email, 'メールアドレス' %><br/>
       <%= f.email_field :email, autofocus: true %>
     </div>
 
     <div class="field">
-      <%= f.label :password, "パスワード" %>
+      <%= f.label :password, 'パスワード' %>
       <% if @minimum_password_length %>
           (<%= @minimum_password_length %>文字以上で登録してください)
       <% end %><br/>
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: 'off' %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation, "パスワード (確認)" %><br/>
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <%= f.label :password_confirmation, 'パスワード (確認)' %><br/>
+      <%= f.password_field :password_confirmation, autocomplete: 'off' %>
     </div>
 
     <div class="actions">
-      <%= f.submit "アカウント作成" %>
+      <%= f.submit 'アカウント作成' %>
     </div>
 <% end %>
 
