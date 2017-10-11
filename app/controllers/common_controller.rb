@@ -11,11 +11,9 @@ class CommonController < ApplicationController
   end
 
   def about
-    render html: 'about'
   end
 
   def support
-    render html: 'support'
   end
 
   def post_support
@@ -23,6 +21,5 @@ class CommonController < ApplicationController
   end
 
   def policies
-    render html: 'policies'
   end
 end
