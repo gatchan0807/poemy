@@ -11,7 +11,7 @@
 <body>
 <header>
   <nav>
-    <%= link_to 'TOP', common_landing_path %>
+    <%= link_to 'TOP', landing_path %>
     <% if user_signed_in? %>
         <strong><%= current_user.username %></strong>
         <%= link_to 'プロフィール変更', edit_user_registration_path %>
