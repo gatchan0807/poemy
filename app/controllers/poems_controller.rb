@@ -1,8 +1,14 @@
 class PoemsController < ApplicationController
+  # Page Response系
   def popular_page
 
   end
 
+  def show
+
+  end
+
+  # API系
   def popular
 
   end
@@ -16,10 +22,6 @@ class PoemsController < ApplicationController
   end
 
   def create
-
-  end
-
-  def show
 
   end
 

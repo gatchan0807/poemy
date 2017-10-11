@@ -1,4 +1,6 @@
 class CommonController < ApplicationController
+
+  # Page Response系
   def landing
   end
 
@@ -16,10 +18,11 @@ class CommonController < ApplicationController
   def support
   end
 
-  def post_support
-    render html: 'post_support'
+  def policies
   end
 
-  def policies
+  # API系
+  def post_support
+    render html: 'post_support'
   end
 end
