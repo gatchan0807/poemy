@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_id
+  before_action :set_ids
 
   def show
   end
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   private
 
-  def set_id
+  def set_ids
     @id = params['user_id']
   end
 end
