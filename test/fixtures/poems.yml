@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  poem_id: MyString
+  content: MyText
+  user_id: MyString
+  good_counter: 1
+  sad_counter: 1
+  glad_counter: 1
+  surprized_counter: 1
+  intrested_counter: 1
+  deleted_at: 2017-10-16 10:13:33
+
+two:
+  poem_id: MyString
+  content: MyText
+  user_id: MyString
+  good_counter: 1
+  sad_counter: 1
+  glad_counter: 1
+  surprized_counter: 1
+  intrested_counter: 1
+  deleted_at: 2017-10-16 10:13:33
