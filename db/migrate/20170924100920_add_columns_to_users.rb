@@ -4,5 +4,6 @@ class AddColumnsToUsers < ActiveRecord::Migration[5.1]
     add_column :users, :uid, :string
     add_column :users, :username, :string
     add_column :users, :userid, :string
+    add_column :users, :deleted_at, :timestamp
   end
 end
