@@ -23,7 +23,13 @@ class PoemsController < ApplicationController
   end
 
   def index_of
+    if cookies[:count_of_user_detail].nil? || cookies[:before_user_id] != params[:user_id]
+      cookies[:count_of_user_detail] = 1
+    end
 
+    cookies[:before_user_id] = params[:user_id]
+
+    render json: Poem.index_with_count(cookies[:count_of_user_detail].to_i) and (cookies[:count_of_user_detail] = cookies[:count_of_user_detail].to_i + 1)
   end
 
   def create
