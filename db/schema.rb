@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016013832) do
+ActiveRecord::Schema.define(version: 20171016013559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(version: 20171016013832) do
     t.string "poem_id"
     t.text "content"
     t.string "user_id"
-    t.integer "good_counter"
-    t.integer "sad_counter"
-    t.integer "glad_counter"
-    t.integer "surprized_counter"
-    t.integer "intrested_counter"
+    t.integer "good_counter", default: 0
+    t.integer "sad_counter", default: 0
+    t.integer "glad_counter", default: 0
+    t.integer "surprized_counter", default: 0
+    t.integer "intrested_counter", default: 0
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

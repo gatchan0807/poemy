@@ -4,11 +4,11 @@ class CreatePoems < ActiveRecord::Migration[5.1]
       t.string :poem_id
       t.text :content
       t.string :user_id
-      t.integer :good_counter
-      t.integer :sad_counter
-      t.integer :glad_counter
-      t.integer :surprized_counter
-      t.integer :intrested_counter
+      t.integer :good_counter, default: 0
+      t.integer :sad_counter, default: 0
+      t.integer :glad_counter, default: 0
+      t.integer :surprized_counter, default: 0
+      t.integer :intrested_counter, default: 0
       t.timestamp :deleted_at
 
       t.timestamps
