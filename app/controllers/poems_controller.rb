@@ -29,7 +29,11 @@ class PoemsController < ApplicationController
 
     cookies[:before_user_id] = params[:user_id]
 
-    render json: Poem.index_with_count(cookies[:count_of_user_detail].to_i) and (cookies[:count_of_user_detail] = cookies[:count_of_user_detail].to_i + 1)
+    render json:
+               Poem.index_of_user_with_count(
+                   cookies[:count_of_user_detail].to_i,
+                   params[:user_id]
+               ) and (cookies[:count_of_user_detail] = cookies[:count_of_user_detail].to_i + 1)
   end
 
   def create
