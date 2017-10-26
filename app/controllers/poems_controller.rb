@@ -13,8 +13,24 @@ class PoemsController < ApplicationController
 
   end
 
+  def show_by_signed_in
+
+  end
+
+  def show_by_non_signed_in
+
+  end
+
   # API系
   def popular
+
+  end
+
+  def popular_by_signed_in
+
+  end
+
+  def popular_by_non_signed_in
 
   end
 
