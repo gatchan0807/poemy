@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   post '/:user_id/poems', to: 'poems#create', as: 'post_poem' # api
   get '/:user_id/poems/:poem_id', to: 'poems#show', as: 'poem_detail_with_user'
   delete '/:user_id/poems/:poem_id', to: 'poems#delete', as: 'delete_poem' # api
-  post '/:user_id/poems/:poem_id/reaction', to: 'poems#add_reaction', as: 'add_reaction'
+  post '/:user_id/poems/:poem_id/reaction', to: 'poems#add_reaction', as: 'add_reaction' # api
 
   # users
   get '/:user_id', to: 'users#show', as: 'user_detail'
