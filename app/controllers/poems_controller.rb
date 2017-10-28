@@ -76,7 +76,21 @@ class PoemsController < ApplicationController
   end
 
   def delete
+    unless current_user.userid == @user_id
+      render json: {
+          message: 'Sorry, You\'re user ID has not matched on request'
+      }, status:   :bad_request and return
+    end
 
+    poem = Poem.where('poem_id = ?', @poem_id)
+
+    if poem.delete(poem.ids) > 0
+      redirect_to root_path
+    else
+      render json: {
+          message: 'You\'re request has failed'
+      }, status:   :bad_request and return
+    end
   end
 
   def add_reaction
