@@ -12,11 +12,12 @@ Rails.application.routes.draw do
   # poems
   get '/popular', to: 'poems#popular_page', as: 'popular_poems_page'
   get '/poems/popular', to: 'poems#popular', as: 'popular_poems' # api
+  get '/poems/:poem_id', to: 'poems#show_by_non_signed_in', as: 'poem_detail'
 
   get '/poems', to: 'poems#index', as: 'poems' # api
   get '/:user_id/poems', to: 'poems#index_of', as: 'poems_with_user' # api
   post '/:user_id/poems', to: 'poems#create', as: 'post_poem' # api
-  get '/:user_id/poems/:poem_id', to: 'poems#show', as: 'poem_detail'
+  get '/:user_id/poems/:poem_id', to: 'poems#show', as: 'poem_detail_with_user'
   delete '/:user_id/poems/:poem_id', to: 'poems#delete', as: 'delete_poem' # api
   post '/:user_id/poems/:poem_id/reaction', to: 'poems#add_reaction', as: 'add_reaction'
 
