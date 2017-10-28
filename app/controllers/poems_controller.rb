@@ -39,38 +39,45 @@ class PoemsController < ApplicationController
   end
 
   def index_of
-    if cookies[:count_of_user_detail].nil? || cookies[:before_user_id] != params[:user_id]
+    if cookies[:count_of_user_detail].nil? || cookies[:before_user_id] != @user_id
       cookies[:count_of_user_detail] = 1
     end
 
-    cookies[:before_user_id] = params[:user_id]
+    cookies[:before_user_id] = @user_id
 
-    render json:
-               Poem.index_of_user_with_count(
-                   cookies[:count_of_user_detail].to_i,
-                   params[:user_id]
+    render json: Poem.index_of_user_with_count(
+        cookies[:count_of_user_detail].to_i,
+        @user_id
                ) and (cookies[:count_of_user_detail] = cookies[:count_of_user_detail].to_i + 1)
   end
 
   def create
-    if params[:contents].nil? || params[:contents].empty?
-      render json: { message: 'You\'re request has not a contents.' }, status: :bad_request and return
+    @contents = params[:contents]
+
+    if @contents.nil? || @contents.empty?
+      render json: {
+          message: 'You\'re request has not a contents.'
+      }, status:   :bad_request and return
     end
 
-    unless params[:user_id] == current_user.userid
+    unless current_user.userid == @user_id
       render json: {
           message: 'Sorry. userid is not matched with userid in session'
       }, status:   :bad_request and return
     end
 
-    poem = Poem.new(content: params[:contents], user_id: current_user.userid, poem_id: PoemUtil.create_poem_id)
+    poem = Poem.new(content: @contents,
+                    user_id: current_user.userid,
+                    poem_id: PoemUtil.create_poem_id)
 
     until poem.save
-      poem = Poem.new(content: params[:contents], user_id: current_user.userid, poem_id: PoemUtil.create_poem_id)
+      poem = Poem.new(content: @contents,
+                      user_id: current_user.userid,
+                      poem_id: PoemUtil.create_poem_id)
     end
 
     render json: {
-        contents: params[:contents],
+        contents: @contents,
         userid:   current_user.userid
     }, status:   :ok and return
   end
