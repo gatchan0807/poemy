@@ -23,15 +23,19 @@ class PoemsController < ApplicationController
 
   # API系
   def popular
-
+    if user_signed_in?
+      popular_by_signed_in
+    else
+      popular_by_non_signed_in
+    end
   end
 
   def popular_by_signed_in
-
+    render json: { message: 'success' }
   end
 
   def popular_by_non_signed_in
-
+    render json: { message: 'fail' }
   end
 
   def index
@@ -48,7 +52,7 @@ class PoemsController < ApplicationController
     render json: Poem.index_of_user_with_count(
         cookies[:count_of_user_detail].to_i,
         @user_id
-               ) and (cookies[:count_of_user_detail] = cookies[:count_of_user_detail].to_i + 1)
+    ) and (cookies[:count_of_user_detail] = cookies[:count_of_user_detail].to_i + 1)
   end
 
   def create
