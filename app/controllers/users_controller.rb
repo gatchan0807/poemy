@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < Devise::RegistrationsController
   before_action :set_ids
   skip_before_action :verify_authenticity_token
 
@@ -37,6 +37,11 @@ class UsersController < ApplicationController
     else
       render json: { message: 'Unfollow failed' }, status: :bad_request and return
     end
+  end
+
+  def edit
+    session[:counter_for_top] = 1
+    super
   end
 
   private
