@@ -39,7 +39,15 @@ class PoemsController < ApplicationController
   end
 
   def index
+    if session[:counter_for_top].nil?
+      session[:counter_for_top] = 1
+    end
 
+    # 'SELECT poems.* FROM poems WHERE user_id IN(SELECT followed_id FROM follows WHERE follow_id = \'ahaha0807_alg\')'
+    user_id = Follow.where('follow_id = ?', current_user.userid).select(:followed_id)
+    poems   = Poem.where(user_id: user_id).limit(20 * session[:counter_for_top].to_i)
+
+    render json: poems and (session[:counter_for_top] = session[:counter_for_top].to_i + 1)
   end
 
   def index_of
