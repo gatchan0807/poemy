@@ -113,7 +113,34 @@ class PoemsController < ApplicationController
   end
 
   def add_reaction
+    unless user_signed_in?
+      render json: {
+          message: 'You need sign_in or sign_up.'
+      }, status:   :unauthorized and return
+    end
 
+    if session[:reacted].nil?
+      session[:reacted] = Array.new
+    end
+
+    if PoemUtil.is_reacted(@poem_id, session[:reacted])
+      render json: {
+          message: 'Already you are reacted'
+      }, status:   :bad_request and return
+    end
+
+    @reaction_type = params[:reaction_type]
+
+    if Poem.add_reaction(@poem_id, @reaction_type)
+      session[:reacted].push(@poem_id)
+      render json: {
+          message: 'Successfully to add reaction.'
+      }, status:   :ok and return
+    else
+      render json: {
+          message: 'Failed to add reaction.'
+      }, status:   :bad_request and return
+    end
   end
 
   private
