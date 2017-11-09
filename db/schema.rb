@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20171016013559) do
     t.integer "good_counter", default: 0
     t.integer "sad_counter", default: 0
     t.integer "glad_counter", default: 0
-    t.integer "surprized_counter", default: 0
-    t.integer "intrested_counter", default: 0
+    t.integer "surprised_counter", default: 0
+    t.integer "interested_counter", default: 0
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

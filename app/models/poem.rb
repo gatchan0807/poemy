@@ -23,11 +23,9 @@ class Poem < ApplicationRecord
       when glad
         @poem.glad_counter += 1
       when surprised
-        # FIXME: タイポ直そうな
-        @poem.surprized_counter += 1
+        @poem.surprised_counter += 1
       when interested
-        # FIXME: タイポ直そうな
-        @poem.intrested_counter += 1
+        @poem.interested_counter += 1
       else
         # No action
     end
