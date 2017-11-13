@@ -42,7 +42,17 @@ class PoemsController < ApplicationController
   end
 
   def popular_by_non_signed_in
-    render json: { message: 'fail' }
+    if session[:counter_for_popular].nil?
+      session[:counter_for_popular] = 1
+    end
+
+    raw = Poem.index_by_popular(session[:counter_for_popular].to_i)
+
+    concealed = raw.map { |poem|
+      Formatter.index_popular_for_dis_signed_in(poem)
+    }
+
+    render json: concealed and (session[:counter_for_popular] = session[:counter_for_popular].to_i + 1)
   end
 
   def index
