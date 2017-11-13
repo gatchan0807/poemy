@@ -40,7 +40,8 @@ class UsersController < Devise::RegistrationsController
   end
 
   def edit
-    session[:counter_for_top] = 1
+    session[:counter_for_top]     = 1
+    session[:counter_for_popular] = 1
     super
   end
 

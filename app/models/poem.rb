@@ -10,6 +10,14 @@ class Poem < ApplicationRecord
     self.index_with_count(count).where('user_id = ?', user_id)
   end
 
+  def self.index_by_popular(count)
+    self.all
+        .select(
+            'poems.*, (good_counter + sad_counter + glad_counter + surprised_counter + interested_counter) as total'
+        )
+        .order('total desc').limit(2 * count)
+  end
+
   def self.add_reaction(id, reaction_type)
     good, sad, glad, surprised, interested = 1, 2, 3, 4, 5
 

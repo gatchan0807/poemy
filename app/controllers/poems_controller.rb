@@ -31,7 +31,14 @@ class PoemsController < ApplicationController
   end
 
   def popular_by_signed_in
-    render json: { message: 'success' }
+    if session[:counter_for_popular].nil?
+      session[:counter_for_popular] = 1
+    end
+
+    render json:
+               Poem.index_by_popular(
+                   session[:counter_for_popular].to_i
+               ) and (session[:counter_for_popular] = session[:counter_for_popular].to_i + 1)
   end
 
   def popular_by_non_signed_in
