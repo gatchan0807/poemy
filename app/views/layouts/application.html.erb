@@ -2,26 +2,14 @@
 <html>
 <head>
   <title>Poemy</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
-
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-<header>
-  <nav>
-    <%= link_to 'TOP', landing_path %>
-    <% if user_signed_in? %>
-        <strong><%= current_user.username %></strong>
-        <%= link_to 'プロフィール変更', edit_user_registration_path %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-    <% else %>
-        <%= link_to 'アカウント作成', new_user_registration_path %>
-        <%= link_to 'ログイン', new_user_session_path %>
-    <% end %>
-  </nav>
-</header>
+<%= render 'shared/header' %>
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
