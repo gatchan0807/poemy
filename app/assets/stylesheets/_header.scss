@@ -1,0 +1,11 @@
+@import 'config/config';
+.header {
+    height: $header-height;
+}
+
+.header-logo {
+    margin-left: 1rem;
+    & img {
+        height: $header-height;
+    }
+}
