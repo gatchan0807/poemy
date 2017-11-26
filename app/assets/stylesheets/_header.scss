@@ -1,6 +1,7 @@
 @import 'config/config';
 .header {
     height: $header-height;
+    background-color: darken($base-color, 40%)    
 }
 
 .header-logo {
