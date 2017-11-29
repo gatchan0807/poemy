@@ -14,6 +14,13 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<%= yield %>
+<article class="container">
+  <%= render 'shared/footer' %>
+  <section class="main">
+    <%= yield %>
+  </section>
+  <%= render 'shared/advertisement' %>
+</article>
+
 </body>
 </html>

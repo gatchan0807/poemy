@@ -1,0 +1,15 @@
+@import 'config/config';
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    width: $center-width;
+}
+
+.notice, .alert {
+    margin: 0;
+    padding: 0;
+}
