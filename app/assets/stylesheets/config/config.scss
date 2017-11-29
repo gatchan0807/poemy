@@ -1,3 +1,12 @@
 $header-height: 80px;
+$footer-height: 160px;
+
+$left-side-width: 20%;
+$center-width: 60%;
+$right-side-width: 20%;
 
 $base-color: #6bb7ef;
+
+$header-color: darken($base-color, 40%);
+$footer-color: lighten($base-color, 30%);
+$advertisement-color: lighten($base-color, 30%);
