@@ -1,0 +1,47 @@
+@import 'config/config';
+
+.header-nav {
+    margin: 0.5rem;
+    margin-top: $header-height / 6;
+    height: $header-height / 1.5;
+    width: $header-height / 1.5;
+    background: image-url('menu_icon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.header-nav-contents {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: $header-height + 10px;
+    right: 0.5rem;
+    border-radius: 5px;
+    background-color: $header-menu-color;
+    & a, strong {
+        color: $base-font-color;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        right: 5%;
+        border: 15px solid transparent;
+        border-bottom: 15px solid $header-menu-color;
+    }
+    & li,
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    & li {
+        list-style: none;
+        padding: 0.5rem 1rem;
+        &:hover {
+            background-color: lighten($header-menu-color, 10%);
+        }
+    }
+    & .header-nav-contents-sign-out {
+        border-top: solid gray 2px;
+    }
+}

@@ -32,48 +32,4 @@
     background-size: contain;
 }
 
-.header-nav {
-    margin: 0.5rem;
-    margin-top: $header-height / 6;
-    height: $header-height / 1.5;
-    width: $header-height / 1.5;
-    background: image-url('menu_icon.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.header-nav-contents {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: $header-height + 10px;
-    right: 0.5rem;
-    border-radius: 5px;
-    background-color: lighten($base-color, 20%);
-    & a, strong {
-        color: darken($base-color, 40%);
-    }
-    &:before {
-        content: "";
-        position: absolute;
-        top: -30px;
-        right: 5%;
-        border: 15px solid transparent;
-        border-bottom: 15px solid lighten($base-color, 20%);
-    }
-    & li,
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-    & li {
-        list-style: none;
-        padding: 0.5rem 1rem;
-        &:hover {
-            background-color: lighten($base-color, 30%)
-        }
-    }
-    & .header-nav-contents-sign-out {
-        border-top: solid gray 2px;
-    }
-}
+@import '_header_menu';
