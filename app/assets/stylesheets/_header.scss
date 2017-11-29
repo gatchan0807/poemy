@@ -7,14 +7,22 @@
 
 .header-logo {
     margin-left: 1rem;
+    width: 30%;
     & img {
         height: $header-height;
     }
 }
 
+.header-menu-wrapper {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .header-post-button {
     border-radius: 10px;
     border: $base-color solid 2px; 
+    margin: 0.5rem;
     margin-top: $header-height / 6;
     height: $header-height / 1.5;
     width: $header-height / 1.5;
@@ -25,6 +33,7 @@
 }
 
 .header-nav {
+    margin: 0.5rem;    
     margin-top: $header-height / 6;    
     height: $header-height / 1.5;
     width: $header-height / 1.5;
