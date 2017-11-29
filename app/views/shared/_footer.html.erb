@@ -1,0 +1,18 @@
+<footer class="footer">
+    <%= link_to 'Poemy (c)Poemy 2017', landing_path, class: 'footer-service-name' %>
+
+    <ul class="footer-link-list">
+        <%= link_to(about_path) do %>
+            <li class="footer-about-link">このアプリについて</li>
+        <% end %>
+        <%= link_to(support_path) do %>
+            <li class="footer-support-link">お問い合わせ</li>
+        <% end %>
+        <%= link_to(policies_path) do %>
+            <li class="footer-policies-link">利用規約</li>
+        <% end %>
+        <%= link_to(popular_poems_page_path) do %>
+            <li class="footer-popular-poems-link">人気のポエム</li>
+        <% end %>
+    </ul>
+</footer>

@@ -1,0 +1,34 @@
+@import 'config/config';
+
+.footer {
+    display: flex;
+    margin: 1rem auto;
+    width: $footer-content-width;
+    height: $footer-height;
+    border-top: $footer-color  solid 2px;
+    border-bottom: $footer-color  solid 2px;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.footer-service-name {
+    margin: 0.5rem;
+    width: 100%;
+    color: $base-font-color;
+    &:hover {
+        color: lighten($base-font-color, 20%);
+    }
+}
+
+.footer-link-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    & li {
+        margin: 0.5rem 1rem;
+        color: $base-font-color;
+        &:hover {
+            color: lighten($base-font-color, 20%);
+        }
+    }
+}
