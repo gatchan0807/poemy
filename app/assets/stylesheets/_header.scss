@@ -1,7 +1,7 @@
 @import 'config/config';
 .header {
     height: $header-height;
-    background-color: darken($base-color, 40%);
+    background-color: $header-color;
     display: flex;
 }
 
