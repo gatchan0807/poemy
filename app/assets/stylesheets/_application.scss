@@ -1,12 +1,17 @@
 @import 'config/config';
 
 .container {
+    height: calc(100% - #{$header-height});
     display: flex;
     flex-direction: row;
 }
 
 .main {
     width: $center-width;
+}
+
+.left-container {
+    width: $left-side-width;
 }
 
 .notice, .alert {
