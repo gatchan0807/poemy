@@ -9,8 +9,9 @@ $footer-content-width: 90%;
 
 $base-color: #6bb7ef;
 $base-font-color: darken($base-color, 40%);
+$base-flame-color: lighten($base-color, 20%);
 
 $header-color: darken($base-color, 40%);
-$header-menu-color: lighten($base-color, 20%);
+$header-menu-color: $base-flame-color;
 $footer-color: lighten($base-color, 10%);
 $advertisement-color: lighten($base-color, 30%);
