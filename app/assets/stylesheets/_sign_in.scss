@@ -1,0 +1,101 @@
+@import 'config/config';
+.sign-in {
+    margin: 10% auto;
+    width: 30rem;
+    height: 75%;
+    border-radius: 5px;
+    background-color: $base-flame-color;
+}
+
+.sign-in-title {
+    margin: 0;
+    padding: 5% 0;
+    text-align: center;
+    color: $base-font-color;
+}
+
+.sign-in-form {
+    margin: 0 auto;
+    width: 80%;
+    height: 55%;
+}
+
+.sign-in-field-wrapper {
+    padding: 1rem 0;
+    color: $base-font-color;
+}
+
+.sign-in-field-label {
+    font-size: 1.5rem;
+}
+
+.sign-in-field {
+    width: 100%;
+    border: 0;
+    border-bottom: $base-color solid 2px;
+    font-size: 1.5rem;
+    color: $base-font-color;
+}
+
+.sign-in-remember-me-label {
+    color: $base-font-color;
+}
+
+.sign-in-submit-button {
+    margin-left: auto;
+    margin-top: 1rem;
+    width: 40%;
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 0;
+    box-shadow: darken($base-color, 30%) 2px;
+    display: block;
+    background-color: $base-color;
+    color: #ffffff;
+    font-size: 1.5rem;
+    &:hover {
+        background-color: lighten($base-color, 5%);
+    }
+}
+
+.user-session-oauth-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.user-session-links-twitter-sign-in {
+    margin-top: 0.4rem;
+    width: 80%;
+    height: 1.8rem;
+    border-bottom: #1DA1F2 solid 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: $base-font-color;
+    font-size: 1.2rem;
+    font-weight: bold;
+    &:hover {
+        background-color: #fafafa;
+    }
+}
+
+.user-session-links-twitter-sign-in-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    padding-right: 10px;
+}
+
+.user-session-links-wrapper {
+    & li {
+        list-style: none;        
+    }
+    & a {
+        text-decoration: underline;
+        color: $base-font-color;
+        &:hover {
+            color: lighten($base-font-color, 20%);
+        }
+    }
+}
